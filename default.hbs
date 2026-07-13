@@ -12,6 +12,25 @@
     </script>
 
     {{ghost_head}}
+
+    <style>
+        /* Reading progress bar (posts) */
+        .gh-reading-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: transparent; z-index: 9999; pointer-events: none; }
+        .gh-reading-progress span { display: block; height: 100%; width: 0; background: var(--ghost-accent-color, #2D6FF7); transition: width .08s linear; }
+        .gh-article-readtime { white-space: nowrap; }
+        /* Clean, readable archive list (no thumbnails) */
+        .gh-list { max-width: 680px; margin: 0 auto; width: 100%; padding: 8px 5vmin 6vmin; }
+        .gh-list-item { padding: 26px 0; border-bottom: 1px solid rgba(0,0,0,.08); }
+        .gh-list-title { display: block; font-weight: 600; font-size: 1.5rem; line-height: 1.3; letter-spacing: -0.01em; color: inherit; text-decoration: none; }
+        .gh-list-title:hover { color: var(--ghost-accent-color, #2D6FF7); }
+        .gh-list-meta { margin-top: 9px; font-size: 1rem; color: #6B7385; }
+        .gh-list-cat { color: var(--ghost-accent-color, #2D6FF7); text-decoration: none; font-weight: 500; }
+        .gh-list-cat:hover { text-decoration: underline; }
+        .gh-list-sep { color: #C7CCD6; margin: 0 8px; }
+        /* Pagination */
+        .pagination { max-width: 680px; margin: 0 auto; width: 100%; padding: 12px 5vmin 7vmin; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; color: #9097A6; }
+        .pagination a { color: var(--ghost-accent-color, #2D6FF7); text-decoration: none; }
+    </style>
 </head>
 
 <body class="{{body_class}} is-head-left-logo is-head-brand{{#if @site.members_enabled}}{{#unless @member}}{{#is "home"}} is-home-cta{{/is}}{{/unless}}{{/if}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">

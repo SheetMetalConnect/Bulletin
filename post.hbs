@@ -1,5 +1,7 @@
 {{!< default}}
 
+<div class="gh-reading-progress" aria-hidden="true"><span id="gh-rp-bar"></span></div>
+
 {{#post}}
 
 <main id="gh-main" class="gh-main">
@@ -7,3 +9,18 @@
 </main>
 
 {{/post}}
+
+<script>
+(function () {
+    var bar = document.getElementById('gh-rp-bar');
+    if (!bar) return;
+    function update() {
+        var d = document.documentElement;
+        var max = d.scrollHeight - d.clientHeight;
+        bar.style.width = (max > 0 ? (d.scrollTop / max) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+})();
+</script>
