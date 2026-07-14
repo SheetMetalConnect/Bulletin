@@ -101,6 +101,11 @@
                             {{navigation type="secondary"}}
                         </nav>
                     {{/if}}
+                    {{#if @member}}
+                        <nav class="gh-foot-menu">
+                            <ul class="nav"><li class="nav-library"><a href="/library/">Library</a></li></ul>
+                        </nav>
+                    {{/if}}
                 </div>
                 <div class="gh-powered-by">
                     {{{t "Powered by {ghostlink}" ghostlink="<a href=\"https://ghost.org/\" target=\"_blank\" rel=\"noopener\">Ghost</a>"}}}

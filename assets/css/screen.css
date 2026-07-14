@@ -552,3 +552,22 @@ h6 {
         opacity: 1;
     }
 }
+
+
+
+
+
+
+
+
+/* ===== LVE CTA + author — minimal, on-brand ===== */
+.lve-cta{margin:6.4rem 0 5.6rem;padding:4rem 4.4rem 4.4rem;border:2px dashed #2D6FF7;border-radius:8px;background:#F5F8FF}
+.lve-cta-title{margin:0 0 1.6rem;font-size:2.2rem;line-height:1.25;letter-spacing:-.01em}
+.lve-cta-text{margin:0 0 3.2rem;max-width:58ch;font-size:1.7rem;line-height:1.65;color:#4A5365}
+.lve-btn{display:inline-block;padding:1.3rem 2.6rem;background:#2D6FF7;color:#fff;font-size:1.5rem;font-weight:600;border-radius:6px;text-decoration:none}
+.lve-btn:hover{background:#1E4FBF;color:#fff}
+.lve-author{position:relative;display:flex;align-items:flex-start;gap:2rem;margin:6.4rem 0 5.6rem;padding-top:4rem}
+.lve-author::before{content:"";position:absolute;top:0;left:0;width:4.8rem;height:2px;background:#2D6FF7}
+.lve-author-img{width:5.6rem;height:5.6rem;border-radius:50%;flex:0 0 auto;box-shadow:0 0 0 3px #fff,0 0 0 5px #2D6FF7}
+.lve-author-name{margin:0 0 .6rem;font-size:1.7rem;font-weight:700;line-height:1.2}
+.lve-author-bio{margin:0;max-width:58ch;font-size:1.7rem;line-height:1.6;color:#4A5365}

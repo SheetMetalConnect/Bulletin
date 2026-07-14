@@ -27,6 +27,32 @@
     </div>
 
     {{#is "post"}}
+        {{#unless @member}}
+            <section class="gh-canvas">
+                <div class="lve-cta">
+                    <h3 class="lve-cta-title">Want to connect your first machine?</h3>
+                    <p class="lve-cta-text">Join free and I'll show you how. You get my members-only starter guide plus the fill-in templates and downloads you'll actually use.</p>
+                    <a class="lve-btn" href="#/portal/signup" data-portal="signup">Get access now</a>
+                </div>
+            </section>
+        {{/unless}}
+
+        {{#primary_author}}
+            <section class="gh-canvas">
+                <div class="lve-author">
+                    {{#if profile_image}}
+                        <img class="lve-author-img" src="{{profile_image}}" alt="{{name}}">
+                    {{/if}}
+                    <div class="lve-author-body">
+                        <p class="lve-author-name">{{name}}</p>
+                        {{#if bio}}<p class="lve-author-bio">{{bio}}</p>{{/if}}
+                    </div>
+                </div>
+            </section>
+        {{/primary_author}}
+    {{/is}}
+
+    {{#is "post"}}
         {{#if comments}}
             <div class="gh-comments gh-canvas">
                 {{comments}}
