@@ -27,3 +27,6 @@
 .lve-disclaimer p{margin:0;max-width:none}
 .lve-disclaimer strong{color:#4A5365}
 .lve-disclaimer a{color:#2D6FF7;text-decoration:underline}
+.gh-foot-locales{display:inline-flex;flex-wrap:wrap;gap:1.2rem 2.4rem;align-items:center;justify-content:center}
+.gh-foot-locales a{font-size:1.3rem;color:var(--color-secondary-text);opacity:.85}
+.gh-foot-locales a:hover{color:var(--color-primary-text);opacity:1}
