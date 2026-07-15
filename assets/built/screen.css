@@ -21,3 +21,9 @@
 
 /* LVE: cobalt content divider (Airy Blueprint) */
 .gh-content hr{width:120px;height:3px;margin:3.2em auto;background-color:#2D6FF7;border:0;border-radius:2px}
+
+/* LVE: guide legal disclaimer (before the CTA) */
+.lve-disclaimer{margin:5.6rem 0 4rem;padding:1.8rem 2.2rem;border:1px solid #E3EAF5;border-radius:8px;background:#FAFBFE;color:#6A7385;font-size:1.35rem;line-height:1.6}
+.lve-disclaimer p{margin:0;max-width:none}
+.lve-disclaimer strong{color:#4A5365}
+.lve-disclaimer a{color:#2D6FF7;text-decoration:underline}
