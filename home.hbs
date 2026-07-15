@@ -92,14 +92,17 @@
                     </div>
                 </div>
             </div>
+            {{> "featured-guides"}}
         {{else}}
             {{#foreach posts limit="1"}}
                 {{> "article"}}
             {{/foreach}}
+            {{> "featured-guides"}}
         {{/unless}}
     {{else}}
         {{#foreach posts limit="1"}}
             {{> "article"}}
         {{/foreach}}
+        {{> "featured-guides"}}
     {{/if}}
 </main>
