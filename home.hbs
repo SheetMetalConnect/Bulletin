@@ -5,7 +5,6 @@
         {{#unless @member}}
             <div class="gh-home">
                 <div class="gh-home-cta">
-                    <div class="gh-home-top">
                         <header class="gh-home-head">
                             <div class="gh-home-brand">
                                 <a class="gh-home-logo" href="{{@site.url}}">
@@ -20,15 +19,12 @@
                             <button class="gh-search gh-icon-btn" aria-label="{{t "Search this site"}}" data-ghost-search>{{> "icons/search"}}</button>
                         </header>
 
-                    </div>
                     <section class="gh-home-subscribe">
                         <h2 class="gh-home-subscribe-title">{{t "Stay tuned"}}</h2>
                         <p class="gh-home-subscribe-description">{{t "Don’t miss out on the latest issues. Sign up now to get access to the library of members-only issues."}}</p>
                         <a class="gh-home-subscribe-input" href="#/portal/signup" data-portal="signup">
                             {{t "jamie@example.com"}} <span>{{> icons/arrow-right}}</span>
                         </a>
-
-                        {{> "live-upcoming"}}
                     </section>
 
                     <footer class="gh-home-footer">
@@ -47,65 +43,44 @@
                 </div>
 
                 <div class="gh-home-latest">
-                    <section class="gh-home-latest-wrapper">
-                        {{#if @site.icon}}
-                            <img class="gh-home-latest-icon" src="{{@site.icon}}" alt="{{@site.title}}">
-                        {{/if}}
+                    {{!-- Staat er een uitzending op de rol, dan is dát het nieuws op de
+                          voorpagina. Zo niet, dan het nieuwste artikel. --}}
+                    {{#get "posts" filter="tag:live+tag:hash-aankomend" limit="1" include="tags" as |uitzending|}}
+                        <section class="gh-home-latest-wrapper">
+                            {{#if @site.icon}}
+                                <img class="gh-home-latest-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+                            {{/if}}
 
-                        {{#foreach posts limit="1"}}
-                            <article class="gh-article {{post_class}}">
-                                <header class="gh-article-header">
-                                    <h2 class="gh-article-title">{{title}}</h2>
-                                    <span class="gh-article-meta">
-                                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
-                                    </span>
-                                </header>
+                            {{#if uitzending}}
+                                {{#foreach uitzending}}{{> "home-feature"}}{{/foreach}}
+                            {{else}}
+                                {{#foreach posts limit="1"}}{{> "home-feature"}}{{/foreach}}
+                            {{/if}}
+                        </section>
 
-                                {{#if feature_image}}
-                                    <figure class="gh-article-image">
-                                        <img
-                                            srcset="{{img_url feature_image size="s"}} 300w,
-                                                    {{img_url feature_image size="m"}} 720w,
-                                                    {{img_url feature_image size="l"}} 960w,
-                                                    {{img_url feature_image size="xl"}} 1200w,
-                                                    {{img_url feature_image size="xxl"}} 2000w"
-                                            sizes="(max-width: 1200px) 100vw, 1200px"
-                                            src="{{img_url feature_image size="xl"}}"
-                                            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                                        >
-                                        {{#if feature_image_caption}}
-                                            <figcaption>{{feature_image_caption}}</figcaption>
-                                        {{/if}}
-                                    </figure>
-                                {{/if}}
-
-                                <div class="gh-content">
-                                    {{content}}
-                                </div>
-                            </article>
-
-                            <footer class="gh-home-latest-footer">
-                                <a class="gh-btn" href="{{url}}">{{t "Read latest issue"}}</a>
-                            </footer>
-                        {{/foreach}}
-                    </section>
-
-                    <div class="gh-home-latest-label">
-                        <span class="gh-home-latest-indicator"></span>
-                        {{t "Latest issue"}}
-                    </div>
+                        <div class="gh-home-latest-label">
+                            <span class="gh-home-latest-indicator"></span>
+                            {{#if uitzending}}Aankomende uitzending{{else}}{{t "Latest issue"}}{{/if}}
+                        </div>
+                    {{/get}}
                 </div>
             </div>
         {{else}}
-            <div class="gh-canvas">{{> "live-upcoming"}}</div>
-            {{#foreach posts limit="1"}}
-                {{> "article"}}
-            {{/foreach}}
+            {{#get "posts" filter="tag:live+tag:hash-aankomend" limit="1" include="tags" as |uitzending|}}
+                {{#if uitzending}}
+                    {{#foreach uitzending}}{{> "article"}}{{/foreach}}
+                {{else}}
+                    {{#foreach posts limit="1"}}{{> "article"}}{{/foreach}}
+                {{/if}}
+            {{/get}}
         {{/unless}}
     {{else}}
-        <div class="gh-canvas">{{> "live-upcoming"}}</div>
-        {{#foreach posts limit="1"}}
-            {{> "article"}}
-        {{/foreach}}
+            {{#get "posts" filter="tag:live+tag:hash-aankomend" limit="1" include="tags" as |uitzending|}}
+            {{#if uitzending}}
+                {{#foreach uitzending}}{{> "article"}}{{/foreach}}
+            {{else}}
+                {{#foreach posts limit="1"}}{{> "article"}}{{/foreach}}
+            {{/if}}
+        {{/get}}
     {{/if}}
 </main>

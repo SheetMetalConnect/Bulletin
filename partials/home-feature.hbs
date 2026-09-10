@@ -1,0 +1,31 @@
+{{!-- Het stuk dat de voorpagina groot laat zien: óf de aankomende uitzending, óf het
+      nieuwste artikel. Nooit allebei. Dezelfde opbouw als Bulletin die had, met één
+      verschil: bij een uitzending staat het uitzendmoment onder de titel in plaats van
+      de publicatiedatum, want dat is de informatie waar je op dat moment op afgaat. --}}
+<article class="gh-article {{post_class}}">
+    <header class="gh-article-header">
+        <h2 class="gh-article-title">{{title}}</h2>
+        {{#match primary_tag.slug "live"}}
+            <div class="lve-live-meta">
+                <time class="lve-live-moment" datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
+                <span class="lve-live-watch"><span class="lve-live-watch-label">Kijk mee op</span>{{> "live-watch"}}</span>
+            </div>
+        {{else}}
+            <span class="gh-article-meta">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+            </span>
+        {{/match}}
+    </header>
+
+    {{> "feature-image"}}
+
+    <div class="gh-content">
+        {{content}}
+    </div>
+</article>
+
+<footer class="gh-home-latest-footer">
+    <a class="gh-btn" href="{{url}}">
+        {{#match primary_tag.slug "live"}}Bekijk de uitzending{{else}}{{t "Read latest issue"}}{{/match}}
+    </a>
+</footer>

@@ -16,16 +16,16 @@
                 <time datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
             </div>
             {{#has tag="#aankomend"}}
-                <p class="lve-live-box-text">Live meekijken kan op YouTube en LinkedIn. Vragen stel je in de chat.</p>
+                <div class="lve-live-box-where">
+                    <span class="lve-live-box-label">Kijk mee op</span>
+                    <span class="lve-live-watch">{{> "live-watch"}}</span>
+                    <p class="lve-live-box-text">Vragen stel je in de chat.</p>
+                </div>
                 {{#unless @member}}
                     <a class="lve-btn" href="#/portal/signup" data-portal="signup">Stuur me de herinnering</a>
                 {{/unless}}
             {{/has}}
         </div>
-
-        {{#if custom_excerpt}}
-            <p class="gh-article-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
 
         <div class="gh-meta-share">
             <a href="#/share" class="gh-button-share">{{t "Share"}} {{> "icons/share"}}</a>

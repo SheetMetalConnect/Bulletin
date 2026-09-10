@@ -1,0 +1,11 @@
+{{!-- Alleen de kijklinks. Het label eromheen zet de aanroeper, want in het uitzendblok
+      staat het boven de links en op de voorpagina ervoor. De adressen komen uit de
+      social-instellingen van de site, dus ze staan nergens hardgecodeerd. --}}
+{{#social_accounts @site}}
+    {{#match type "youtube"}}
+        <a class="lve-live-watch-link" href="{{href}}" target="_blank" rel="noopener">{{> "icons/youtube"}}YouTube</a>
+    {{/match}}
+    {{#match type "linkedin"}}
+        <a class="lve-live-watch-link" href="{{href}}" target="_blank" rel="noopener">{{> "icons/linkedin"}}LinkedIn</a>
+    {{/match}}
+{{/social_accounts}}
