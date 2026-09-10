@@ -41,15 +41,7 @@
             </section>
         {{/has}}
 
-        {{#unless @member}}
-            <section class="gh-canvas">
-                <div class="lve-cta">
-                    <h3 class="lve-cta-title">Word insider, het is gratis</h3>
-                    <p class="lve-cta-text">Je krijgt de insider-gidsen, de invulsjablonen die je direct gebruikt, en een uitnodiging voor de besloten webinars en events.</p>
-                    <a class="lve-btn" href="#/portal/signup" data-portal="signup">Word insider</a>
-                </div>
-            </section>
-        {{/unless}}
+        {{> "subscribe-cta"}}
 
         {{#primary_author}}
             <section class="gh-canvas">

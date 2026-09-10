@@ -561,9 +561,6 @@ h6 {
 
 
 /* ===== LVE CTA + author — minimal, on-brand ===== */
-.lve-cta{margin:6.4rem 0 5.6rem;padding:4rem 4.4rem 4.4rem;border:2px dashed #2D6FF7;border-radius:8px;background:#F5F8FF}
-.lve-cta-title{margin:0 0 1.6rem;font-size:2.2rem;line-height:1.25;letter-spacing:-.01em}
-.lve-cta-text{margin:0 0 3.2rem;max-width:58ch;font-size:1.7rem;line-height:1.65;color:#4A5365}
 .lve-btn{display:inline-block;padding:1.3rem 2.6rem;background:#2D6FF7;color:#fff;font-size:1.5rem;font-weight:600;border-radius:6px;text-decoration:none}
 .lve-btn:hover{background:#1E4FBF;color:#fff}
 .lve-author{position:relative;display:flex;align-items:flex-start;gap:2rem;margin:6.4rem 0 5.6rem;padding-top:4rem}
@@ -580,12 +577,6 @@ h6 {
 
 /* aflevering: uitzendmoment in plaats van leestijd */
 .lve-live-post .gh-article-title{margin-bottom:2.4rem}
-.lve-live-box{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:1.2rem 3.2rem;margin:0 0 1.6rem;padding:2.4rem 2.8rem;text-align:left;border:1px solid var(--color-light-gray);border-radius:8px;background:#F5F8FF}
-.lve-live-box-when{display:flex;flex-direction:column;gap:.6rem}
-.lve-live-box .lve-btn{grid-column:1/-1;justify-self:start;margin-top:.8rem}
-.lve-live-box-when time{font-size:1.9rem;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--color-darker-gray)}
-.lve-live-box-label{font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-secondary-text)}
-.lve-live-box-text{margin:0;font-size:1.6rem;line-height:1.5;color:var(--color-secondary-text)}
 .lve-live-post .lve-live-eyebrow{justify-self:center;display:inline-flex;align-items:center;padding:.6rem 1.1rem .5rem .9rem;margin:0 0 1.6rem;font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-darker-gray);border:1px solid var(--color-light-gray);border-radius:32px}
 .lve-live-dot{width:8px;height:8px;margin-right:.8rem;border-radius:50%;background-color:var(--ghost-accent-color)}
 
@@ -599,16 +590,26 @@ h6 {
 /* de 2fr-rij van .gh-home-cta was al bedoeld als ademruimte: het abonneerblok
    centreert erin, zodat de aankondiging bovenaan niet tegen de kop aan plakt */
 .gh-home-subscribe{align-self:center}
-@media (max-width:600px){.lve-live-box{grid-template-columns:1fr;gap:1.6rem;padding:2rem}}
 
 /* uitzendmoment en kijklinks */
-.lve-live-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.8rem 2rem;margin-top:2.4rem}
-.lve-live-moment{font-size:1.6rem;font-weight:600;color:var(--color-darker-gray)}
-.lve-live-watch{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.6rem;font-size:1.5rem;color:var(--color-secondary-text)}
-.lve-live-watch-label{font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em}
-.lve-live-watch-link{display:inline-flex;align-items:center;gap:.6rem;color:var(--color-darker-gray);font-weight:600}
+.lve-live-meta{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1.6rem}
+.lve-live-watch{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.6rem;color:inherit}
+.lve-live-watch-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--color-darker-gray)}
 .lve-live-watch-link:hover{color:var(--ghost-accent-color)}
 .lve-live-watch-link svg{width:1.6rem;height:1.6rem;fill:currentColor}
-.lve-live-box-text .lve-live-watch{display:inline-flex}
-.lve-live-box-where{display:flex;flex-direction:column;gap:.8rem}
-.lve-live-box-where .lve-live-watch{gap:.8rem 1.6rem}
+
+/* uitzendmoment in de gecentreerde kop, geen kaart */
+.lve-live-when{margin-top:2.4rem;font-size:1.9rem;font-weight:700;line-height:1.3;letter-spacing:-.01em;color:var(--color-darker-gray)}
+.lve-live-when-label{display:block;margin-bottom:.4rem;font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-secondary-text)}
+.lve-live-post .lve-live-watch{justify-content:center;margin-top:1.2rem;font-size:1.6rem;color:var(--color-secondary-text)}
+.lve-live-cta{margin-top:2.4rem}
+.lve-live-post .lve-btn{justify-self:center}
+
+/* abonneerblok: dunne lijn boven en onder, gecentreerd, knop van het thema */
+.lve-subscribe{margin:6.4rem 0 0;padding:4.8rem 0;text-align:center;border-top:1px solid var(--color-light-gray);border-bottom:1px solid var(--color-light-gray)}
+.lve-subscribe-title{margin:0;font-size:2.4rem;line-height:1.2;letter-spacing:-.01em}
+.lve-subscribe-text{margin:1.2rem auto 2.8rem;max-width:46ch;font-size:1.7rem;line-height:1.5;color:var(--color-secondary-text)}
+
+/* uitgelichte artikelen boven de lijst */
+.lve-featured{margin-bottom:4.8rem;padding-bottom:1.6rem;border-bottom:1px solid var(--color-light-gray)}
+.lve-featured-head{margin:0 0 2.4rem;font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-secondary-text)}

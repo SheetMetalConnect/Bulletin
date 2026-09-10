@@ -1,6 +1,7 @@
-{{!-- Een aflevering van Metaal Connect LIVE is geen artikel. Geen leestijd, geen
-      archief-disclaimer: een uitzendmoment, en na afloop de opname. Twee toestanden,
-      één post, dezelfde URL — het interne merk #aankomend bepaalt welke. --}}
+{{!-- Een aflevering van Metaal Connect LIVE is geen artikel: een uitzendmoment, en na
+      afloop de opname. Eén post, twee toestanden, dezelfde URL. Het interne merk
+      #aankomend bepaalt welke. Geen kaart of kader, want de kop van dit thema is een
+      gecentreerde stapel en dit hoort daar gewoon in mee te lopen. --}}
 <article class="gh-article {{post_class}} lve-live-post">
     <header class="gh-article-header gh-canvas">
         <span class="lve-live-eyebrow">
@@ -10,22 +11,17 @@
 
         <h1 class="gh-article-title">{{title}}</h1>
 
-        <div class="lve-live-box">
-            <div class="lve-live-box-when">
-                <span class="lve-live-box-label">{{#has tag="#aankomend"}}Live op{{else}}Uitgezonden{{/has}}</span>
-                <time datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
-            </div>
-            {{#has tag="#aankomend"}}
-                <div class="lve-live-box-where">
-                    <span class="lve-live-box-label">Kijk mee op</span>
-                    <span class="lve-live-watch">{{> "live-watch"}}</span>
-                    <p class="lve-live-box-text">Vragen stel je in de chat.</p>
-                </div>
-                {{#unless @member}}
-                    <a class="lve-btn" href="#/portal/signup" data-portal="signup">Stuur me de herinnering</a>
-                {{/unless}}
-            {{/has}}
+        <div class="lve-live-when">
+            <span class="lve-live-when-label">{{#has tag="#aankomend"}}Live op{{else}}Uitgezonden{{/has}}</span>
+            <time datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
         </div>
+
+        {{#has tag="#aankomend"}}
+            <p class="lve-live-watch">Kijk mee op {{> "live-watch"}}</p>
+            {{#unless @member}}
+                <a class="lve-btn lve-live-cta" href="#/portal/signup" data-portal="signup">Stuur me een herinnering</a>
+            {{/unless}}
+        {{/has}}
 
         <div class="gh-meta-share">
             <a href="#/share" class="gh-button-share">{{t "Share"}} {{> "icons/share"}}</a>
@@ -38,15 +34,7 @@
         {{content}}
     </div>
 
-    {{#unless @member}}
-        <section class="gh-canvas">
-            <div class="lve-cta">
-                <h3 class="lve-cta-title">Geen uitzending missen?</h3>
-                <p class="lve-cta-text">Word gratis insider. Je krijgt elke aflevering vooraf in je mail, plus de insider-gidsen, de invulsjablonen en de besloten webinars en events.</p>
-                <a class="lve-btn" href="#/portal/signup" data-portal="signup">Word insider</a>
-            </div>
-        </section>
-    {{/unless}}
+    {{> "subscribe-cta" title="Geen uitzending missen?" text="Ik kondig elke uitzending vooraf aan in de mail."}}
 
     <footer class="gh-article-footer gh-canvas">
         <nav class="gh-navigation">

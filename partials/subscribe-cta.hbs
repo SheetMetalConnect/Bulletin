@@ -1,0 +1,10 @@
+{{!-- Eén abonneerblok voor de hele site. Geen kader: een dunne lijn boven en onder,
+      gecentreerd, met de knop die het thema zelf gebruikt (.gh-btn). Aanroepen met
+      een eigen kop en regel, anders staat de standaard er. --}}
+{{#unless @member}}
+    <aside class="lve-subscribe gh-canvas">
+        <h3 class="lve-subscribe-title">{{#if title}}{{title}}{{else}}Blijf op de hoogte{{/if}}</h3>
+        <p class="lve-subscribe-text">{{#if text}}{{text}}{{else}}Abonneer je en ontvang maximaal één keer per week updates over artikelen, events en meer.{{/if}}</p>
+        <a class="gh-btn" href="#/portal/signup" data-portal="signup">Abonneer je</a>
+    </aside>
+{{/unless}}

@@ -6,10 +6,10 @@
     <header class="gh-article-header">
         <h2 class="gh-article-title">{{title}}</h2>
         {{#match primary_tag.slug "live"}}
-            <div class="lve-live-meta">
-                <time class="lve-live-moment" datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
-                <span class="lve-live-watch"><span class="lve-live-watch-label">Kijk mee op</span>{{> "live-watch"}}</span>
-            </div>
+            <span class="gh-article-meta lve-live-meta">
+                <time datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="DD MMM YYYY"}} · {{date format="HH:mm"}}</time>
+                {{> "live-watch"}}
+            </span>
         {{else}}
             <span class="gh-article-meta">
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>

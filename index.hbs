@@ -17,6 +17,20 @@
         </header>
     </section>
 
+    {{!-- Uitgelicht: Ghost's eigen `featured`-vlag op een post. Aanzetten doe je in
+          de editor (Post settings, "Feature this post"), hier komt hij bovenaan te
+          staan. Alleen op de eerste pagina, anders herhaalt het zich. --}}
+    {{#get "posts" filter="featured:true+tag:-hash-en+tag:-hash-archive-de+tag:-hash-archive-news+tag:-live" limit="3" include="tags" as |uitgelicht|}}
+        {{#if uitgelicht}}
+            <section class="lve-featured">
+                <h2 class="lve-featured-head">{{t "Featured"}}</h2>
+                <div class="gh-feed">
+                    {{#foreach uitgelicht}}{{> "loop"}}{{/foreach}}
+                </div>
+            </section>
+        {{/if}}
+    {{/get}}
+
     <div class="gh-feed">
         {{#foreach posts}}
             {{> "loop"}}
