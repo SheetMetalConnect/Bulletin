@@ -31,23 +31,38 @@
 .gh-foot-locales a{font-size:1.3rem;color:var(--color-secondary-text);opacity:.85}
 .gh-foot-locales a:hover{color:var(--color-primary-text);opacity:1}
 
-/* ===== LVE Metaal Connect LIVE — uitzending is geen artikel ===== */
-.lve-live-eyebrow{display:flex;align-items:center;gap:.8rem;margin:0 0 1.2rem;font-size:1.2rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2D6FF7}
-.lve-live-dot{width:.7rem;height:.7rem;border-radius:50%;background:currentColor;flex:0 0 auto}
-.lve-live-next{margin:0 0 3.2rem;padding:0 0 2.4rem;border-bottom:1px solid hsla(0,0%,100%,.25)}
-.lve-live-next .lve-live-eyebrow{color:hsla(0,0%,100%,.75)}
-.lve-live-title{display:block;font-family:var(--gh-font-heading,var(--font-serif));font-size:2rem;font-weight:700;line-height:1.3;letter-spacing:-.01em;color:#fff;text-decoration:none}
-.lve-live-title:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.lve-live-when{display:block;margin-top:.8rem;font-size:1.5rem;line-height:1.5;color:hsla(0,0%,100%,.75)}
+/* ===== LVE Metaal Connect LIVE — uitzending is geen artikel =====
+   Alle maten komen uit het thema zelf: de pil is .gh-home-latest-label (het
+   "nieuwste artikel"-label rechts), de titel staat op de maat van .gh-home-logo,
+   de datum op die van .gh-home-description. Geen nieuwe typografie. */
+
+/* home: kop en aankondiging delen de eerste gridrij, aankondiging onderaan */
+.gh-home-top{display:flex;flex-direction:column;gap:4.8rem}
+.lve-live-next{max-width:480px}
+.lve-live-label{position:static;padding:.6rem 1.1rem .5rem .9rem;color:var(--color-white);border-color:hsla(0,0%,100%,.35)}
+.lve-live-label .gh-home-latest-indicator{background-color:var(--color-white);box-shadow:0 0 0 0 hsla(0,0%,100%,.9)}
+.lve-live-title{display:block;margin-top:1.6rem;font-family:var(--gh-font-heading,var(--font-sans));font-size:2.4rem;font-weight:800;line-height:1.2;letter-spacing:-.03em;color:var(--color-white);text-decoration:none}
+.lve-live-title:hover{color:var(--color-white);text-decoration:underline;text-underline-offset:.4rem}
+.lve-live-when{display:block;margin-top:.4rem;font-size:1.6rem;line-height:1.4;color:hsla(0,0%,100%,.8)}
+
+/* aflevering: uitzendmoment in plaats van leestijd */
 .lve-live-post .gh-article-title{margin-bottom:2.4rem}
-.lve-live-box{display:flex;flex-wrap:wrap;align-items:center;gap:1.6rem 3.2rem;margin:0 0 3.2rem;padding:2rem 2.4rem;border:1px solid #E3EAF5;border-radius:8px;background:#F5F8FF;text-align:left}
+.lve-live-box{display:flex;flex-wrap:wrap;align-items:center;gap:1.6rem 3.2rem;margin:0 0 3.2rem;padding:2rem 2.4rem;text-align:left;border:1px solid var(--color-light-gray);border-radius:8px;background:#F5F8FF}
 .lve-live-box-when{display:flex;flex-direction:column;gap:.6rem}
-.lve-live-box-when time{font-size:1.8rem;font-weight:700;line-height:1.2;color:#15171A}
-.lve-live-box-label{font-size:1.2rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6A7385}
-.lve-live-box-text{flex:1 1 22rem;margin:0;font-size:1.5rem;line-height:1.55;color:#4A5365}
+.lve-live-box-when time{font-size:1.9rem;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--color-darker-gray)}
+.lve-live-box-label{font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-secondary-text)}
+.lve-live-box-text{flex:1 1 22rem;margin:0;font-size:1.6rem;line-height:1.5;color:var(--color-secondary-text)}
 .lve-live-box .lve-btn{flex:0 0 auto}
-.lve-live-card-next{padding:2.4rem 2.8rem;border:1px solid #2D6FF7;border-radius:8px;background:#F5F8FF}
-.lve-live-card-next .lve-live-eyebrow{margin-bottom:.8rem}
-.lve-live-card-next .gh-card-date{margin:0 0 .4rem}
-.lve-live-card-next .gh-card-title{margin:0 0 .8rem}
-.lve-live-card-next .gh-card-excerpt{margin:0}
+.lve-live-post .lve-live-eyebrow{display:inline-flex;align-items:center;padding:.6rem 1.1rem .5rem .9rem;margin:0 0 1.6rem;font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-darker-gray);border:1px solid var(--color-light-gray);border-radius:32px}
+.lve-live-dot{width:8px;height:8px;margin-right:.8rem;border-radius:50%;background-color:var(--ghost-accent-color)}
+
+/* /live/: de aankomende uitzending als eerste kaart */
+.lve-live-card-next{padding:3.2rem;border:1px solid var(--color-light-gray);border-radius:8px;background:#F5F8FF}
+.lve-live-card-next .lve-live-eyebrow{display:inline-flex;align-items:center;padding:.6rem 1.1rem .5rem .9rem;margin:0 0 1.6rem;font-size:1.3rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em;color:var(--color-darker-gray);border:1px solid var(--color-light-gray);border-radius:32px;background:#fff}
+.lve-live-card-next .gh-card-date{margin:0}
+.lve-live-card-next .gh-card-title{margin:.8rem 0 0}
+.lve-live-card-next .gh-card-excerpt{margin:.8rem 0 0}
+
+/* de 2fr-rij van .gh-home-cta was al bedoeld als ademruimte: het abonneerblok
+   centreert erin, zodat de aankondiging bovenaan niet tegen de kop aan plakt */
+.gh-home-subscribe{align-self:center}
