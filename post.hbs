@@ -5,7 +5,13 @@
 {{#post}}
 
 <main id="gh-main" class="gh-main">
-    {{> "article"}}
+    {{!-- has tag="..." vergelijkt op tagNAAM; match op de slug blijft kloppen als
+          de tag ooit hernoemd wordt. --}}
+    {{#match primary_tag.slug "live"}}
+        {{> "live-article"}}
+    {{else}}
+        {{> "article"}}
+    {{/match}}
 </main>
 
 {{/post}}

@@ -30,3 +30,20 @@
 .gh-foot-locales{display:inline-flex;flex-wrap:wrap;gap:1.2rem 2.4rem;align-items:center;justify-content:center}
 .gh-foot-locales a{font-size:1.3rem;color:var(--color-secondary-text);opacity:.85}
 .gh-foot-locales a:hover{color:var(--color-primary-text);opacity:1}
+
+/* ===== LVE Metaal Connect LIVE — uitzending is geen artikel ===== */
+.lve-live-eyebrow{display:inline-flex;align-items:center;gap:.8rem;margin:0 0 1.2rem;font-size:1.2rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2D6FF7}
+.lve-live-dot{width:.8rem;height:.8rem;border-radius:50%;background:#2D6FF7;box-shadow:0 0 0 .4rem rgba(45,111,247,.18)}
+.lve-live-next{flex:0 0 auto;margin:0 0 3.2rem;padding:2rem 2.2rem;border:1px solid rgba(255,255,255,.35);border-radius:8px}
+.lve-live-next .lve-live-eyebrow{color:inherit}
+.lve-live-next .lve-live-dot{background:currentColor;box-shadow:0 0 0 .4rem rgba(255,255,255,.2)}
+.lve-live-title{display:block;margin:0 0 .8rem;font-size:2rem;font-weight:700;line-height:1.25;color:inherit;text-decoration:none}
+.lve-live-title:hover{color:inherit;text-decoration:underline}
+.lve-live-when{font-size:1.4rem;opacity:.8}
+.lve-live-post .gh-article-title{margin-bottom:2.4rem}
+.lve-live-box{display:flex;flex-wrap:wrap;align-items:center;gap:1.6rem 2.4rem;margin:0 0 2.4rem;padding:1.8rem 2.2rem;border:1px solid #E3EAF5;border-radius:8px;background:#F5F8FF}
+.lve-live-box-when{display:flex;flex-direction:column;gap:.4rem;font-size:1.7rem;font-weight:600}
+.lve-live-box-label{font-size:1.2rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6A7385}
+.lve-live-box-text{flex:1 1 24rem;margin:0;font-size:1.5rem;line-height:1.55;color:#4A5365}
+.lve-live-card-next{padding:2.4rem;border:2px dashed #2D6FF7;border-radius:8px;background:#F5F8FF}
+.lve-live-card-next .gh-card-title{margin-top:.4rem}

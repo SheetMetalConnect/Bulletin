@@ -1,0 +1,72 @@
+{{!-- Een aflevering van Metaal Connect LIVE is geen artikel. Geen leestijd, geen
+      archief-disclaimer: een uitzendmoment, en na afloop de opname. Twee toestanden,
+      één post, dezelfde URL — het interne merk #aankomend bepaalt welke. --}}
+<article class="gh-article {{post_class}} lve-live-post">
+    <header class="gh-article-header gh-canvas">
+        <span class="lve-live-eyebrow">
+            <span class="lve-live-dot"></span>
+            {{#has tag="#aankomend"}}Aankomende uitzending{{else}}Metaal Connect LIVE{{/has}}
+        </span>
+
+        <h1 class="gh-article-title">{{title}}</h1>
+
+        <div class="lve-live-box">
+            <div class="lve-live-box-when">
+                <span class="lve-live-box-label">{{#has tag="#aankomend"}}Live op{{else}}Uitgezonden{{/has}}</span>
+                <time datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
+            </div>
+            {{#has tag="#aankomend"}}
+                <p class="lve-live-box-text">Live meekijken kan op YouTube en LinkedIn. Vragen stel je in de chat.</p>
+                {{#unless @member}}
+                    <a class="lve-btn" href="#/portal/signup" data-portal="signup">Stuur me de herinnering</a>
+                {{/unless}}
+            {{/has}}
+        </div>
+
+        {{#if custom_excerpt}}
+            <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+
+        <div class="gh-meta-share">
+            <a href="#/share" class="gh-button-share">{{t "Share"}} {{> "icons/share"}}</a>
+        </div>
+
+        {{> "feature-image"}}
+    </header>
+
+    <div class="gh-content gh-canvas">
+        {{content}}
+    </div>
+
+    {{#unless @member}}
+        <section class="gh-canvas">
+            <div class="lve-cta">
+                <h3 class="lve-cta-title">Geen uitzending missen?</h3>
+                <p class="lve-cta-text">Meld je gratis aan. Je krijgt elke aflevering vooraf in je mail, samen met de artikelen.</p>
+                <a class="lve-btn" href="#/portal/signup" data-portal="signup">Aanmelden</a>
+            </div>
+        </section>
+    {{/unless}}
+
+    <footer class="gh-article-footer gh-canvas">
+        <nav class="gh-navigation">
+            <div class="gh-navigation-previous">
+                {{#prev_post in="primary_tag"}}
+                    <a class="gh-navigation-link" href="{{url}}">
+                        {{> icons/arrow-left}} <span class="gh-navigation-hide">Vorige aflevering</span>
+                    </a>
+                {{/prev_post}}
+            </div>
+            <div class="gh-navigation-middle">
+                <a class="gh-navigation-link" href="/live/">Alle afleveringen</a>
+            </div>
+            <div class="gh-navigation-next">
+                {{#next_post in="primary_tag"}}
+                    <a class="gh-navigation-link" href="{{url}}">
+                        <span class="gh-navigation-hide">Volgende aflevering</span> {{> icons/arrow-right}}
+                    </a>
+                {{/next_post}}
+            </div>
+        </nav>
+    </footer>
+</article>

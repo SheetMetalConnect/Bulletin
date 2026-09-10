@@ -1,0 +1,31 @@
+{{!< default}}
+{{!-- /live/ — Metaal Connect LIVE. De aankomende uitzending staat groot bovenaan,
+      daaronder de afleveringen om terug te kijken. Geen artikelenlijst. --}}
+
+<main id="gh-main" class="gh-main gh-canvas">
+    <section class="gh-pagehead">
+        <header class="gh-pagehead-content">
+            <h1 class="gh-pagehead-title">Metaal Connect LIVE</h1>
+            <div class="gh-pagehead-description">
+                Elke twee weken live over digitalisering in de metaal. Zonder bandje, met Vraag &amp; Antwoord.
+            </div>
+        </header>
+    </section>
+
+    <div class="gh-feed">
+        {{#foreach posts}}
+            {{#has tag="#aankomend"}}
+                <article class="gh-card post lve-live-card-next">
+                    <a class="gh-card-link" href="{{url}}">
+                        <span class="lve-live-eyebrow"><span class="lve-live-dot"></span>Aankomende uitzending</span>
+                        <time class="gh-card-date" datetime="{{date format="YYYY-MM-DDTHH:mm"}}">{{date format="D MMMM YYYY"}} om {{date format="HH:mm"}} uur</time>
+                        <h2 class="gh-card-title">{{title}}</h2>
+                        {{#if custom_excerpt}}<p class="gh-card-excerpt">{{custom_excerpt}}</p>{{/if}}
+                    </a>
+                </article>
+            {{else}}
+                {{> "loop"}}
+            {{/has}}
+        {{/foreach}}
+    </div>
+</main>

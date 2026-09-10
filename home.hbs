@@ -19,6 +19,8 @@
                         <button class="gh-search gh-icon-btn" aria-label="{{t "Search this site"}}" data-ghost-search>{{> "icons/search"}}</button>
                     </header>
 
+                    {{> "live-upcoming"}}
+
                     <section class="gh-home-subscribe">
                         <h2 class="gh-home-subscribe-title">{{t "Stay tuned"}}</h2>
                         <p class="gh-home-subscribe-description">{{t "Don’t miss out on the latest issues. Sign up now to get access to the library of members-only issues."}}</p>
@@ -38,7 +40,7 @@
                                 </a>
                             {{/social_accounts}}
                         </div>
-                        <p class="gh-home-copyright">{{@site.title}} © {{date format="YYYY"}}</p>
+                        <p class="gh-home-copyright">Luke van Enkhuizen · Sheet Metal Connect e.U. © {{date format="YYYY"}}</p>
                     </footer>
                 </div>
 
@@ -93,11 +95,13 @@
                 </div>
             </div>
         {{else}}
+            <div class="gh-canvas">{{> "live-upcoming"}}</div>
             {{#foreach posts limit="1"}}
                 {{> "article"}}
             {{/foreach}}
         {{/unless}}
     {{else}}
+        <div class="gh-canvas">{{> "live-upcoming"}}</div>
         {{#foreach posts limit="1"}}
             {{> "article"}}
         {{/foreach}}
